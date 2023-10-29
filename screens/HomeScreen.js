@@ -3,25 +3,28 @@ import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import {themeColors} from '../theme';
 import { StatusBar } from 'expo-status-bar';
-import { categories, restaurantItems } from '../constants';
+import { categories, cusines, priceRange, restaurantItems } from '../constants';
 import Carousel from 'react-native-snap-carousel';
 import FoodCard from '../components/foodCard';
 import { BellIcon, MagnifyingGlassIcon } from 'react-native-heroicons/outline'
 import { MapPinIcon } from 'react-native-heroicons/solid'
+import { SelectList } from 'react-native-dropdown-select-list'
 
 const {width, height} = Dimensions.get('window');
 const ios = Platform.OS == 'ios';
 export default function HomeScreen() {
+  const [selected, setSelected] = useState("");
   const [activeCategory, setActiveCategory] = useState(1);
+  const [dateMoment, setDateMoment] = useState("");
 
   return (
     <View className="flex-1 relative bg-white">
       <StatusBar />
 
-      {/* <Image 
-        source={require('../assets/images/beansBackground1.png')} 
-        style={{height: height*0.2}} 
-        className="w-full absolute -top-5 opacity-10" /> */}
+      <Image 
+        source={require('../assets/images/plaintain.png')} 
+        style={{height: height*0.5}} 
+        className="w-full absolute -top-90 opacity-30" />
       <SafeAreaView className={ios? '-mb-8': ''}>
         {/* avatar and bell icon */}
         <View className="mx-4 flex-row justify-between items-center">
@@ -57,14 +60,22 @@ export default function HomeScreen() {
             className="overflow-visible"
             renderItem={({item})=>{
               isActive = item.id==activeCategory;
-              let activeTextClass = isActive? 'text-white': 'text-gray-700';
+              // let activeTextClass = isActive? 'text-white': 'text-gray-700';
               return (
-                <TouchableOpacity 
-                onPress={()=> setActiveCategory(item.id)}
-                style={{backgroundColor: isActive? themeColors.bgLight: 'rgba(0,0,0,0.07)'}} 
-                className="p-4 px-5 mr-2 rounded-full shadow">
-                  <Text className={"font-semibold " + activeTextClass}>{item.title}</Text>
-                </TouchableOpacity>
+                <SelectList
+                  setSelected={(val) => setSelected(val)}
+                  data={categoryName.toString()}
+                  onSelect={()=> setActiveCategory(item.id)}
+                  search={false}
+                />
+
+
+                // <TouchableOpacity 
+                // onPress={()=> setActiveCategory(item.id)}
+                // style={{backgroundColor: isActive? themeColors.bgLight: 'rgba(0,0,0,0.07)'}} 
+                // className="p-4 px-5 mr-2 rounded-full shadow">
+                //   <Text className={"font-semibold " + activeTextClass}>{item.category}</Text>
+                // </TouchableOpacity>
               )
             }}
           />

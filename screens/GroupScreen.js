@@ -12,8 +12,6 @@ const ios = Platform.OS == 'ios';
 
 
 export default function FavouriteScreen(props) {
-  const item = props.route.params;
-  const [size, setSize] = useState('small');
   const navigation = useNavigation();
   return (
     <View className="flex-1">
@@ -96,9 +94,9 @@ export default function FavouriteScreen(props) {
           <View className="flex-row justify-between items-center px-4 mb-2">
               <View className="flex-row items-center space-x-1">
                 <Text className="text-base text-gray-700 font-semibold opacity-60">
-                  Volume 
+                  Miles
                 </Text>
-                <Text className="text-base text-black font-semibold"> {item.volume}</Text>
+                <Text className="text-base text-black font-semibold"> {item.miles}</Text>
               </View>
               <View 
                 className="flex-row items-center space-x-4 border-gray-500 border rounded-full p-1 px-4">
