@@ -2,7 +2,51 @@
 // don't worry, you can find this data in the git repo 
 // you can find the git repo link in the description ;)
 
+export const cards = [
+    {
+        id: 1,
+        name: "Eureka!",
+        photoURL: "https://s3-media0.fl.yelpcdn.com/bphoto/_xWByD8LFF2pFiDDmFcmLw/348s.jpg",
+        price: "$$",
+        rating: "4.0",
+        address: "2601 Center St",
+        cuisine1: "American",
+        cuisine2: "",
+        cuisine3: "",
+        review1: "test1",
+        review2: "test2",
+        review3: "test3",
+        review4: "test4",
+        review5: "test5",
+        review6: "test6",
+        review7: "test7",
+        review8: "test8",
+        review9: "test9",
+        review10: "test10",
+    },
 
+    {
+        id: 2,
+        name: "NIHAO!",
+        photoURL: "https://s3-media2.fl.yelpcdn.com/bphoto/JZyCHH5vbr4phHequQn-zA/o.jpg",
+        price: "$$",
+        rating: "4.0",
+        address: "2601 Center St",
+        cuisine1: "American",
+        cuisine2: "Tex-Mexican",
+        cuisine3: "Trying it's best",
+        review1: "test1",
+        review2: "test2",
+        review3: "test3",
+        review4: "test4",
+        review5: "test5",
+        review6: "test6",
+        review7: "test7",
+        review8: "test8",
+        review9: "test9",
+        review10: "test10",
+    },
+]
 export const categories = [
     {
         id: 1,
