@@ -60,22 +60,14 @@ export default function HomeScreen() {
             className="overflow-visible"
             renderItem={({item})=>{
               isActive = item.id==activeCategory;
-              // let activeTextClass = isActive? 'text-white': 'text-gray-700';
+              let activeTextClass = isActive? 'text-white': 'text-gray-700';
               return (
-                <SelectList
-                  setSelected={(val) => setSelected(val)}
-                  data={categoryName.toString()}
-                  onSelect={()=> setActiveCategory(item.id)}
-                  search={false}
-                />
-
-
-                // <TouchableOpacity 
-                // onPress={()=> setActiveCategory(item.id)}
-                // style={{backgroundColor: isActive? themeColors.bgLight: 'rgba(0,0,0,0.07)'}} 
-                // className="p-4 px-5 mr-2 rounded-full shadow">
-                //   <Text className={"font-semibold " + activeTextClass}>{item.category}</Text>
-                // </TouchableOpacity>
+                <TouchableOpacity 
+                onPress={()=> setActiveCategory(item.id)}
+                style={{backgroundColor: isActive? themeColors.bgLight: 'rgba(0,0,0,0.07)'}} 
+                className="p-4 px-5 mr-2 rounded-full shadow">
+                  <Text className={"font-semibold " + activeTextClass}>{item.category}</Text>
+                </TouchableOpacity>
               )
             }}
           />
